@@ -1,5 +1,36 @@
 # Changelog
 
+## 2.6.0
+
+- Comments at the top of the file now become the section description text.
+  By @phaer in https://github.com/nix-community/nixdoc/pull/70
+
+  For example, the following file
+  ```nix
+  /*
+  This is just a test!
+  */
+  {
+    /* Increments a number by one */
+    increment = x: x + 1;
+  }
+  ```
+
+  turns into the following markdown:
+
+  ```markdown
+  # Test {#sec-functions-library-test}
+  This is just a test!
+
+  ## `lib.test.increment` {#function-library-lib.test.increment}
+
+  Increments a number by one
+
+  `x`
+
+  : Function argument
+  ```
+
 ## 2.5.1
 
 - readme: fix link to rendering example by @infinisil in https://github.com/nix-community/nixdoc/pull/67
